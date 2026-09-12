@@ -6,6 +6,7 @@
 
 /* 客户编号仅用于系统内部识别，弹窗中不展示。 */
 .modal-body .detail-grid .muted{display:none}
+.modal-body .warning{display:none}
 /* 与短信发送看板统一的视觉规范 */
 :root{--nav:#001529;--blue:#409eff;--ink:#303133;--muted:#909399;--line:#ebeef5;--bg:#f0f2f5}
 body{min-width:1120px;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif}
