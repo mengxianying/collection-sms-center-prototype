@@ -39,7 +39,7 @@ let page='blacklist',tab='sms',pageNo=1,pageSize=10,detailCustomer='KH10001',fil
 const save=()=>{try{localStorage.setItem(key,JSON.stringify(records))}catch{}};
 function toast(s){$('#toast').textContent=s;$('#toast').style.display='block';clearTimeout(toast.timer);toast.timer=setTimeout(()=>$('#toast').style.display='none',2600)}
 function go(p){page=p;render()}
-function render(){document.querySelectorAll('[data-page]').forEach(b=>b.classList.toggle('active',b.dataset.page===page));$('#crumb').textContent=page==='blacklist'?'黑名单维护':page==='cases'?'案件列表':'催收详情';document.title='租后系统 · '+$('#crumb').textContent;if(page==='blacklist')renderList();else if(page==='cases')renderCases();else renderCustomer()}
+function render(){document.querySelectorAll('[data-page]').forEach(b=>b.classList.toggle('active',b.dataset.page===page));$('#crumb').textContent=page==='blacklist'?'黑名单维护':page==='cases'?'案件列表':'催收详情';document.title='租后系统 · '+$('#crumb').textContent;if(page==='blacklist')renderList();else if(page==='cases'){renderCases();document.querySelector('.page-heading p')?.remove();document.querySelector('.content > .panel .notice')?.remove()}else renderCustomer()}
 const options=(pairs,value)=>pairs.map(([v,l])=>`<option value="${v}" ${value===v?'selected':''}>${l}</option>`).join('');
 function heading(title,sub,extra=''){return `<div class="page-heading"><div><h1>${title}</h1><p>${sub}</p></div>${extra}</div>`}
 function hasCustomerSms(cid,excludeId){return records.some(r=>r.id!==excludeId&&r.cid===cid&&r.active&&r.type==='sms'&&r.dim==='customer')}
