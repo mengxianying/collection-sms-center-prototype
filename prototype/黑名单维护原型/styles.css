@@ -54,3 +54,4 @@ table{min-width:920px}
 
 /* 有效期选项增加间距，便于区分指定日期与长期有效。 */
 .expiry-options{gap:56px}
+.blacklist-detail-note{margin-top:10px;padding:10px 12px;background:#f4f9ff;border:1px solid #d9ecff;color:#56708c;border-radius:4px;font-size:12px}
