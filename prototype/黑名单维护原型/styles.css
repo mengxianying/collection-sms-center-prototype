@@ -51,3 +51,6 @@ table{min-width:920px}
   .formlabel{text-align:left;padding-top:0}
   .radio-line{flex-wrap:wrap;gap:14px}
 }
+
+/* 有效期选项增加间距，便于区分指定日期与长期有效。 */
+.expiry-options{gap:56px}
