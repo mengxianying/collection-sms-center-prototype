@@ -11,16 +11,16 @@
   </style>
 </head>
 <body><div class="app">
-  <aside class="side"><div class="brand"><i></i>基建中心</div><div class="group">平台管理</div><div class="nav">首页</div><div class="nav">短信中心</div><div class="nav on">短信黑名单</div><div class="nav">短信模板</div><div class="group">系统设置</div><div class="nav">接口管理</div><div class="nav">操作日志</div></aside>
+  <aside class="side"><div class="brand"><i></i>基建中心</div><div class="group">平台管理</div><div class="nav">首页</div><div class="nav">短信中心</div><div class="nav on" onclick="location.href='sms-blacklist.html'">短信黑名单</div><div class="nav">短信模板</div><div class="group">系统设置</div><div class="nav">接口管理</div><div class="nav">操作日志</div></aside>
   <main class="main"><header class="top"><div class="crumb">短信中心　/　短信黑名单　/　批量导入</div><div class="user">基建管理员 <span class="avatar">管</span></div></header>
-  <section class="content"><span class="back" onclick="history.back()">‹ 返回短信黑名单</span><div class="title">批量导入短信黑名单</div><div class="desc">下载标准模板并填写数据，上传后系统将自动校验格式。无需填写批次名称。</div>
+  <section class="content"><span class="back" onclick="location.href='sms-blacklist.html'">‹ 返回短信黑名单</span><div class="title">批量导入短信黑名单</div><div class="desc">下载标准模板并填写数据，上传后系统将自动校验格式。无需填写批次名称。</div>
     <div class="card"><div class="step"><span class="on">1 上传文件</span><span>2 自动校验</span><span>3 确认导入</span></div>
       <div class="upload" id="drop"><div class="upload-icon">⇧</div><strong>点击或拖拽上传 Excel 文件</strong><p>支持 .xlsx、.xls、.csv，单个文件不超过 10MB</p><p>加入原因须在模板每一行中填写</p><div class="actions"><button class="btn primary" id="choose">选择文件</button><button class="btn" id="template">下载导入模板</button></div><input id="file" type="file" accept=".xlsx,.xls,.csv" hidden></div>
       <div class="file-line" id="fileLine"><span id="fileName"></span><span class="ok">上传完成，正在校验...</span></div>
       <div class="rules"><div class="rule"><b>必填字段</b>手机号、黑名单类型、标签、来源系统、加入原因、有效期截止日</div><div class="rule"><b>枚举校验</b>黑名单类型限营销类/通知类/催收类；标签限五个约定枚举</div><div class="rule"><b>来源规则</b>催收系统、法诉系统提交的数据均归入催收类短信</div><div class="rule"><b>展示范围</b>仅导入短信黑名单，外呼黑名单不在本页面展示</div></div>
       <div class="preview"><div class="preview-head"><b>导入校验预览</b><div class="counts"><span class="ok" id="success">成功 0 条</span><span class="bad" id="fail">失败 0 条</span></div></div>
         <table><thead><tr><th>序号</th><th>客户姓名</th><th>手机号</th><th>黑名单类型</th><th>标签</th><th>来源系统</th><th>加入原因</th><th>有效期截止日</th><th>校验结果</th><th>失败原因</th></tr></thead><tbody id="rows"><tr><td colspan="10" class="empty">上传文件后自动展示校验结果</td></tr></tbody></table>
-      </div><div class="foot"><button class="btn" onclick="history.back()">取消</button><button class="btn primary" id="confirm" disabled>确认导入</button></div>
+      </div><div class="foot"><button class="btn" onclick="location.href='sms-blacklist.html'">取消</button><button class="btn primary" id="confirm" disabled>确认导入</button></div>
     </div>
   </section></main></div>
   <script>
