@@ -55,3 +55,10 @@ table{min-width:920px}
 /* 有效期选项增加间距，便于区分指定日期与长期有效。 */
 .expiry-options{gap:56px}
 .blacklist-detail-note{margin-top:10px;padding:10px 12px;background:#f4f9ff;border:1px solid #d9ecff;color:#56708c;border-radius:4px;font-size:12px}
+.collapsible-section{padding-bottom:0}
+.collapsible-trigger{display:flex;align-items:center;justify-content:space-between;width:100%;border:0;background:transparent;color:var(--ink);padding:0;text-align:left;font:inherit;font-size:18px;font-weight:500}
+.collapsible-trigger:hover{color:var(--blue)}
+.collapsible-trigger:focus-visible{border-radius:3px}
+.collapsible-arrow{color:var(--muted);font-size:20px;line-height:1;transition:transform .18s ease,color .18s ease}
+.collapsible-trigger:hover .collapsible-arrow{color:var(--blue)}
+.collapsible-content[hidden]{display:none}
