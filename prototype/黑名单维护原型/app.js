@@ -26,7 +26,7 @@ const key='collection-blacklist-prototype-phone-v2';try{const cached=JSON.parse(
 records=records.map(r=>({...r,controlScope:r.controlScope||'global',tag:r.tag||'other',dim:'phone',sourceSystem:r.sourceSystem||'租后系统',storage:r.storage||(r.type==='sms'?'infrastructure':'rent-after')}));
 const allRecords=()=>[...records,...externalGlobal];
 const recordById=id=>allRecords().find(r=>String(r.id)===String(id));
-const systemSource=r=>r.sourceSystem||(r.type==='sms'?'租后系统':'租后系统');
+const systemSource=r=>r.type==='call'?'租后系统（本地）':r.sourceSystem||'租后系统';
 let page='blacklist',tab='sms',pageNo=1,pageSize=10,detailCustomer='KH10001',filters={name:'',phone:'',status:'active',cid:''},formSource='黑名单库';
 const overdueCustomers=new Set();
 const isOverdue=r=>r.orderOverdue===true||overdueCustomers.has(r.cid);
