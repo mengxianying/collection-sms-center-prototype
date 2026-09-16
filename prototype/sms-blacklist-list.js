@@ -2,20 +2,28 @@ const mask = document.getElementById("mask");
 const rows = [...document.querySelectorAll("#rows tr")];
 const nameFilter = document.getElementById("nameFilter");
 const phoneFilter = document.getElementById("phoneFilter");
+const sourceFilter = document.getElementById("sourceFilter");
+const statusFilter = document.getElementById("statusFilter");
 
 function applyFilters() {
   const type = document.querySelector(".tab.on")?.dataset.type || "全部";
   const name = nameFilter.value.trim();
   const phone = phoneFilter.value.trim();
+  const source = sourceFilter.value;
+  const status = statusFilter.value;
 
   rows.forEach((row) => {
     const rowName = row.children[0]?.textContent.trim();
-    const rowPhone = row.children[1]?.textContent.trim();
+    const rowPhone = row.dataset.phone;
     const rowType = row.children[2]?.textContent.trim();
+    const rowSource = row.children[3]?.textContent.trim();
+    const rowStatus = row.children[8]?.textContent.trim();
     const typeMatches = type === "全部" || rowType === type;
     const nameMatches = !name || rowName === name;
     const phoneMatches = !phone || rowPhone === phone;
-    row.hidden = !(typeMatches && nameMatches && phoneMatches);
+    const sourceMatches = source.startsWith("来源系统：") || rowSource === source;
+    const statusMatches = status.startsWith("黑名单状态：") || rowStatus === status;
+    row.hidden = !(typeMatches && nameMatches && phoneMatches && sourceMatches && statusMatches);
   });
 }
 
@@ -36,6 +44,8 @@ document.getElementById("searchButton").addEventListener("click", applyFilters);
 document.getElementById("resetButton").addEventListener("click", () => {
   nameFilter.value = "";
   phoneFilter.value = "";
+  sourceFilter.selectedIndex = 0;
+  statusFilter.selectedIndex = 0;
   document.querySelectorAll(".tab").forEach((item) => item.classList.remove("on"));
   document.querySelector('.tab[data-type="全部"]').classList.add("on");
   applyFilters();
