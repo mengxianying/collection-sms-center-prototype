@@ -1,5 +1,23 @@
 const mask = document.getElementById("mask");
 const rows = [...document.querySelectorAll("#rows tr")];
+const nameFilter = document.getElementById("nameFilter");
+const phoneFilter = document.getElementById("phoneFilter");
+
+function applyFilters() {
+  const type = document.querySelector(".tab.on")?.dataset.type || "全部";
+  const name = nameFilter.value.trim();
+  const phone = phoneFilter.value.trim();
+
+  rows.forEach((row) => {
+    const rowName = row.children[0]?.textContent.trim();
+    const rowPhone = row.children[1]?.textContent.trim();
+    const rowType = row.children[2]?.textContent.trim();
+    const typeMatches = type === "全部" || rowType === type;
+    const nameMatches = !name || rowName === name;
+    const phoneMatches = !phone || rowPhone === phone;
+    row.hidden = !(typeMatches && nameMatches && phoneMatches);
+  });
+}
 
 document.getElementById("import").addEventListener("click", () => {
   window.location.href = "./sms-blacklist-import.html";
@@ -10,11 +28,22 @@ document.querySelectorAll(".tab").forEach((tab) => {
     document.querySelectorAll(".tab").forEach((item) => item.classList.remove("on"));
     tab.classList.add("on");
 
-    const type = tab.dataset.type;
-    rows.forEach((row) => {
-      const rowType = row.children[2]?.textContent.trim();
-      row.hidden = type !== "全部" && rowType !== type;
-    });
+    applyFilters();
+  });
+});
+
+document.getElementById("searchButton").addEventListener("click", applyFilters);
+document.getElementById("resetButton").addEventListener("click", () => {
+  nameFilter.value = "";
+  phoneFilter.value = "";
+  document.querySelectorAll(".tab").forEach((item) => item.classList.remove("on"));
+  document.querySelector('.tab[data-type="全部"]').classList.add("on");
+  applyFilters();
+});
+
+[nameFilter, phoneFilter].forEach((input) => {
+  input.addEventListener("keydown", (event) => {
+    if (event.key === "Enter") applyFilters();
   });
 });
 
