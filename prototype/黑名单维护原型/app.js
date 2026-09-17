@@ -24,6 +24,7 @@ let records=[
 const externalGlobal=[{id:'g1',cid:'KH10001',type:'sms',phone:'15900001001',reason:'法诉系统高风险案件统一停止短信',sourceSystem:'法诉系统',storage:'infrastructure',expiryDate:'',controlScope:'global',tag:'not-self',active:true}];
 const key='collection-blacklist-prototype-phone-v2';try{const cached=JSON.parse(localStorage.getItem(key));if(Array.isArray(cached)&&cached.length)records=cached}catch{}
 records=records.map(r=>({...r,controlScope:r.controlScope||'global',tag:r.tag||'other',dim:'phone',sourceSystem:r.sourceSystem||'租后系统',storage:r.storage||(r.type==='sms'?'infrastructure':'rent-after')}));
+records=records.map(r=>r.id===4&&!r.reason?{...r,reason:'客户申请暂停该号码短信联系'}:r);
 const allRecords=()=>[...records,...externalGlobal];
 const recordById=id=>allRecords().find(r=>String(r.id)===String(id));
 const systemSource=r=>r.type==='call'?'租后系统（本地）':r.sourceSystem||'租后系统';
