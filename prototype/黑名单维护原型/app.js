@@ -16,7 +16,7 @@ let records=[
 {id:1,cid:'KH10001',type:'sms',dim:'phone',phone:'13800001001',reason:'客户申请暂停该号码短信联系',source:'黑名单库',sourceSystem:'租后系统',storage:'infrastructure',by:'孟宪迎',time:'2026-09-10 09:36:12',active:true},
 {id:2,cid:'KH10002',type:'sms',dim:'phone',phone:'15800001002',reason:'收货手机号无需短信联系',source:'案件详情',sourceSystem:'租后系统',storage:'infrastructure',controlScope:'system',by:'孟宪迎',time:'2026-09-10 09:25:30',active:true},
 {id:3,cid:'KH10003',type:'sms',dim:'phone',phone:'18500001003',reason:'目前使用手机号暂停短信联系',source:'案件列表',sourceSystem:'租后系统',storage:'infrastructure',by:'陈静',time:'2026-09-10 09:18:06',active:true},
-{id:4,cid:'KH10004',type:'sms',dim:'phone',phone:'13600001004',reason:'',source:'历史入口',sourceSystem:'租后系统',storage:'infrastructure',by:'陈静',time:'2026-09-09 16:20:03',active:true},
+{id:4,cid:'KH10004',type:'sms',dim:'phone',phone:'13600001004',reason:'客户申请暂停该号码短信联系',source:'历史入口',sourceSystem:'租后系统',storage:'infrastructure',by:'陈静',time:'2026-09-09 16:20:03',active:true},
 {id:5,cid:'KH10005',type:'sms',dim:'phone',phone:'13500001005',reason:'客户申请暂停该号码短信联系',source:'黑名单库',sourceSystem:'租后系统',storage:'infrastructure',by:'孟宪迎',time:'2026-09-09 15:42:18',active:true},
 {id:6,cid:'KH10006',type:'sms',dim:'phone',phone:'13400001006',reason:'客户要求暂停短信',source:'案件列表',by:'陈静',time:'2026-09-09 14:11:00',active:false,removed:'2026-09-10 08:30:00',removeReason:'客户同意恢复联系'},
 {id:7,cid:'KH10001',type:'call',dim:'phone',phone:'13800001001',reason:'客户要求仅人工联系',source:'黑名单库',sourceSystem:'租后系统',storage:'rent-after',by:'孟宪迎',time:'2026-09-10 09:36:12',active:true},
