@@ -22,7 +22,7 @@ let records=[
 {id:6,cid:'KH10006',type:'sms',dim:'phone',phone:'13400001006',reason:'客户要求暂停短信',source:'案件列表',by:'陈静',time:'2026-09-09 14:11:00',active:false,removed:'2026-09-10 08:30:00',removeReason:'客户同意恢复联系'},
 {id:7,cid:'KH10001',type:'call',dim:'phone',phone:'13800001001',reason:'客户要求仅人工联系',source:'黑名单库',sourceSystem:'租后系统',storage:'rent-after',by:'孟宪迎',time:'2026-09-10 09:36:12',active:true},
 {id:8,cid:'KH10003',type:'call',dim:'phone',phone:'13700001003',reason:'客户停止自动外呼',source:'案件列表',sourceSystem:'租后系统',storage:'rent-after',by:'陈静',time:'2026-09-10 09:18:06',active:true}];
-const externalGlobal=[{id:'g1',cid:'KH10001',type:'sms',phone:'15900001001',reason:'法诉系统高风险案件统一停止短信',sourceSystem:'法诉系统',storage:'infrastructure',expiryDate:'',controlScope:'global',tag:'not-self',active:true}];
+const externalGlobal=[{id:'g1',cid:'KH10001',type:'sms',phone:'15900001001',reason:'法诉系统高风险案件统一停止短信',sourceSystem:'法诉系统',storage:'infrastructure',expiryDate:'',controlScope:'global',tag:'not-self',by:'法诉系统',time:'2026-09-12 10:15:00',active:true}];
 const key='collection-blacklist-prototype-phone-v2';try{const cached=JSON.parse(localStorage.getItem(key));if(Array.isArray(cached)&&cached.length)records=cached}catch{}
 records=records.map(r=>({...r,controlScope:r.controlScope||'global',tag:r.tag||'other',dim:'phone',sourceSystem:r.sourceSystem||'租后系统',storage:r.storage||(r.type==='sms'?'infrastructure':'rent-after'),expiryDate:r.expiryDate||'2026-12-31'}));
 records=records.map(r=>r.id===4&&!r.reason?{...r,reason:'客户申请暂停该号码短信联系'}:r);
