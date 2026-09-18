@@ -52,8 +52,12 @@ table{min-width:920px}
   .radio-line{flex-wrap:wrap;gap:14px}
 }
 
-/* 有效期选项增加间距，便于区分指定日期与长期有效。 */
-.expiry-options{gap:56px}
+/* 有效期快捷选项与自定义日期。 */
+.expiry-presets{display:flex;flex-wrap:wrap;gap:10px 22px;align-items:center}
+.expiry-presets label{display:flex;align-items:center;gap:7px;cursor:pointer;white-space:nowrap}
+.expiry-date-row{display:flex;align-items:center;gap:12px;margin-top:12px}
+.expiry-date-row input{width:180px}
+.expiry-date-row .helper{margin-top:0}
 .blacklist-detail-note{margin-top:10px;padding:10px 12px;background:#f4f9ff;border:1px solid #d9ecff;color:#56708c;border-radius:4px;font-size:12px}
 .collapsible-section{padding-bottom:0}
 .collapsible-trigger{display:flex;align-items:center;justify-content:space-between;width:100%;border:0;background:transparent;color:var(--ink);padding:0;text-align:left;font:inherit;font-size:18px;font-weight:500}
