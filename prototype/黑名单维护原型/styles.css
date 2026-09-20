@@ -66,3 +66,7 @@ table{min-width:920px}
 .collapsible-arrow{color:var(--muted);font-size:20px;line-height:1;transition:transform .18s ease,color .18s ease}
 .collapsible-trigger:hover .collapsible-arrow{color:var(--blue)}
 .collapsible-content[hidden]{display:none}
+.phone-reveal{border:0;background:transparent;color:#909399;padding:0 0 0 7px;font-size:13px;line-height:1;cursor:pointer;vertical-align:middle}
+.phone-reveal:hover{color:var(--blue)}
+.phone-reveal:focus-visible{outline:2px solid #1c72d5;outline-offset:2px;border-radius:3px}
+.phone-value{display:inline-block}
