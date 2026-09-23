@@ -10,6 +10,10 @@
 
 案件列表法诉批量出催原型：`prototype/案件列表法诉批量出催原型.html`。
 
+## 在线预览
+
+[直接预览法诉批量出催原型](https://mengxianying.github.io/collection-sms-center-prototype/prototype/legal-batch.html)
+
 ## 覆盖范围
 
 - 短信发送看板：批次监控、合计、筛选、分页及失败重发
