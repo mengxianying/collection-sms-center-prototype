@@ -70,3 +70,6 @@ table{min-width:920px}
 .phone-reveal:hover{color:var(--blue)}
 .phone-reveal:focus-visible{outline:2px solid #1c72d5;outline-offset:2px;border-radius:3px}
 .phone-value{display:inline-block}
+
+/* 黑名单库页签下不展示规则说明提示条。 */
+#content .panel > .tabs + .notice{display:none}
