@@ -73,3 +73,6 @@ table{min-width:920px}
 
 /* 黑名单库页签下不展示规则说明提示条。 */
 #content .panel > .tabs + .notice{display:none}
+
+/* 黑名单库筛选项不展示客户编号。 */
+#query-form .filter:has(#f-cid){display:none}
