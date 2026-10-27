@@ -76,3 +76,7 @@ table{min-width:920px}
 
 /* 黑名单库筛选项不展示客户编号。 */
 #query-form .filter:has(#f-cid){display:none}
+
+/* 特殊用户管理中的停催组合操作。 */
+.stop-collection-row{margin-bottom:20px}
+.stop-collection-option{display:inline-flex;align-items:center;gap:8px;color:#303133;font-weight:500;cursor:pointer}
