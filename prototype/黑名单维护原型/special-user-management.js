@@ -34,7 +34,6 @@
 
   window.openAdd = function openSpecialUserAdd(cid, prephone = '', source = '案件列表') {
     originalOpenAdd(cid, prephone, source);
-    document.querySelector('#modal-title').textContent = '加入特殊用户';
     const typeRow = document.querySelector('#modal-body .formrow');
     typeRow.insertAdjacentHTML('beforebegin', `
       <div class="formrow stop-collection-row">
