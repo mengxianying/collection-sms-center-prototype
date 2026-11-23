@@ -5,7 +5,7 @@
 
   function refreshManageLabels(root = document) {
     root.querySelectorAll('[data-case-manage]').forEach(button => {
-      button.textContent = '特殊用户管理';
+      button.textContent = '黑名单设置';
     });
   }
 
@@ -49,7 +49,7 @@
 
   window.manageCustomerBlacklist = function manageSpecialUser(cid) {
     originalManage(cid);
-    document.querySelector('#modal-title').textContent = '特殊用户管理';
+    document.querySelector('#modal-title').textContent = '黑名单设置';
     const addButton = document.querySelector('#manager-add');
     if (addButton) addButton.textContent = '＋ 加入特殊用户';
     document.querySelectorAll('#modal-body .empty').forEach(element => {
@@ -61,9 +61,9 @@
     originalRenderCases();
     refreshManageLabels();
     const description = document.querySelector('.page-heading p');
-    if (description) description.textContent = '通过“特殊用户管理”统一处理当前客户的黑名单与停催设置';
+    if (description) description.textContent = '通过“黑名单设置”统一处理当前客户的黑名单与停催设置';
     const notice = document.querySelector('#content .panel > .notice');
-    if (notice) notice.lastChild.textContent = '仅从案件列表发起特殊用户设置，客户由当前案件自动带入；可单独配置短信黑名单、自动外呼黑名单，或使用停催一键同时限制全部号码。';
+    if (notice) notice.lastChild.textContent = '仅从案件列表发起黑名单设置，客户由当前案件自动带入；可单独配置短信黑名单、自动外呼黑名单，或使用停催一键同时限制全部号码。';
   };
 
   refreshManageLabels();
