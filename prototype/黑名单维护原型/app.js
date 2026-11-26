@@ -33,7 +33,7 @@ const expiryText=r=>r.expiryDate||'2026-12-31';
 const allRecords=()=>[...records,...externalGlobal.map(r=>({...r,expiryDate:r.expiryDate||'2026-12-31'}))];
 const recordById=id=>allRecords().find(r=>String(r.id)===String(id));
 const systemSource=r=>r.type==='call'?'租后系统（本地）':r.sourceSystem||'租后系统';
-let page='blacklist',tab='sms',pageNo=1,pageSize=10,detailCustomer='KH10001',filters={name:'',phone:'',status:'active',cid:''},formSource='黑名单库';
+let page='cases',tab='sms',pageNo=1,pageSize=10,detailCustomer='KH10001',filters={name:'',phone:'',status:'active',cid:''},formSource='黑名单库';
 const overdueCustomers=new Set();
 const isOverdue=r=>r.orderOverdue===true||overdueCustomers.has(r.cid);
 const outOfCollectionCustomers=new Set();
